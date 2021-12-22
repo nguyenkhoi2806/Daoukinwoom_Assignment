@@ -11,7 +11,7 @@
     "ecmaVersion": 13,
     "sourceType": "module"
   },
-  "plugins": ["react", "simple-import-sort"],
+  "plugins": ["react", "simple-import-sort", "jsx-a11y"],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
