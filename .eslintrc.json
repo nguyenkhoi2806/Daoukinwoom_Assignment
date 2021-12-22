@@ -20,5 +20,13 @@
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-closing-tag-location": "error",
     "operator-linebreak": ["error", "before"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*Container.js", "App.js"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
 }

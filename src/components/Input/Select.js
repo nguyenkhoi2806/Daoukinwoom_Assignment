@@ -2,7 +2,7 @@ import PropsType from "prop-types";
 import React from "react";
 import { FormSelect } from "react-bootstrap";
 
-const Select = (props) => {
+const Select = props => {
   const { options, onChange, value } = props;
   return (
     <FormSelect onChange={onChange} value={value}>
@@ -17,12 +17,12 @@ const Select = (props) => {
 Select.propTypes = {
   options: PropsType.array,
   onChange: PropsType.func.isRequired,
-  value: PropsType.string,
+  value: PropsType.string
 };
 
 Select.defaultProps = {
   options: [],
-  value: "",
+  value: ""
 };
 
 export default Select;

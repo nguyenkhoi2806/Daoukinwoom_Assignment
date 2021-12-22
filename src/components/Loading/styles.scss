@@ -1,0 +1,46 @@
+@import '../../assets/variables';
+
+.loading-wrapper {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--inline {
+    min-height: unset;
+    justify-content: flex-start;
+  }
+}
+
+.loader {
+  padding-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__text {
+    color: $text-color;
+    font-size: 14/16 + rem;
+    font-style: italic;
+    line-height: calc(19 / 14);
+    margin-right: 19px;
+  }
+
+  &__spinner {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 6px solid $background;
+    border-top-color: $primary;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
