@@ -1,25 +1,24 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 13,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react", 
-        "simple-import-sort"
-    ],
-    "rules": {
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error"
-    }
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/prop-types": ["error"],
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-closing-tag-location": "error",
+    "operator-linebreak": ["error", "before"]
+  }
 }
