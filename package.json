@@ -39,7 +39,13 @@
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "eslint": "^8.5.0",
-    "eslint-plugin-react": "^7.27.1"
+    "eslint-plugin-react": "^7.27.1",
+    "husky": "^7.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
