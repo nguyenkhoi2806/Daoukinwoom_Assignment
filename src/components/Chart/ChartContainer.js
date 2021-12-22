@@ -1,24 +1,41 @@
+import "./style.scss";
+
 import React from "react";
-import { FormSelect } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 import { CHART_MODE } from "../../constants/chart";
+import { SELECT, TEXT } from "../../constants/inputType";
+import Input from "../Input";
 
 class ChartContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       mode: "",
-      data: ""
+      data: "",
     };
   }
 
   render() {
+    const { mode, data } = this.state;
+
     return (
-      <FormSelect>
-        {CHART_MODE.map((mode, key) => (
-          <option key={`${mode}-${key}`}>{mode} </option>
-        ))}
-      </FormSelect>
+      <div className="chart-container">
+        <Row>
+          <Col md={6}>
+            <Input
+              label="Mode"
+              options={CHART_MODE}
+              type={SELECT}
+              value={mode}
+            />
+            <Input label="Data" type={TEXT} value={data} />
+          </Col>
+          <Col md={6}>
+            <div className="chart-container__chart" />
+          </Col>
+        </Row>
+      </div>
     );
   }
 }
