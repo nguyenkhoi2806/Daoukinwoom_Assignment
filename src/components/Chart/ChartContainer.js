@@ -1,7 +1,7 @@
 import "./style.scss";
 
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 import { CHART_MODE } from "../../constants/chart";
 import { SELECT, TEXT } from "../../constants/inputType";
@@ -12,7 +12,7 @@ class ChartContainer extends React.Component {
     super(props);
     this.state = {
       mode: "",
-      data: "",
+      data: ""
     };
   }
 
@@ -30,6 +30,7 @@ class ChartContainer extends React.Component {
               value={mode}
             />
             <Input label="Data" type={TEXT} value={data} />
+            <Button variant="primary">Update chart</Button>
           </Col>
           <Col md={6}>
             <div className="chart-container__chart" />
