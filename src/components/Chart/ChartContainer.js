@@ -1,11 +1,13 @@
 import "./style.scss";
 
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
-import { CHART_MODE } from "../../constants/chart";
+import { BAR, CHART_MODE, LINE } from "../../constants/chart";
 import { COLOR, SELECT, TEXT } from "../../constants/inputType";
 import Input from "../Input";
+import Bar from "./Bar";
+import Line from "./Line";
 
 class ChartContainer extends React.Component {
   constructor(props) {
@@ -49,10 +51,11 @@ class ChartContainer extends React.Component {
               value={color}
               onChange={value => this.onChange("color", value)}
             />
-            <Button variant="primary">Update chart</Button>
           </Col>
           <Col md={6}>
-            <div className="chart-container__chart" />
+            <div className="chart-container__chart">
+              {mode === BAR ? <Bar /> : mode === LINE ? <Line /> : null}
+            </div>
           </Col>
         </Row>
       </div>
