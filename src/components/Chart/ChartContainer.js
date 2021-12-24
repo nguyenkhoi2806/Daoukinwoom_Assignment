@@ -3,11 +3,11 @@ import "./style.scss";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-import { BAR, CHART_MODE, LINE } from "../../constants/chart";
+import { CHART_MODE } from "../../constants/chart";
 import { COLOR, SELECT, TEXT } from "../../constants/inputType";
+import { getCountryWithLimit } from "../../services/data";
 import Input from "../Input";
 import Bar from "./Bar";
-import Line from "./Line";
 
 class ChartContainer extends React.Component {
   constructor(props) {
@@ -15,19 +15,36 @@ class ChartContainer extends React.Component {
     this.state = {
       mode: "",
       data: "",
-      color: "#00000"
+      color: "#00000",
+      dataObject: []
     };
   }
 
-  onChange = (file, value) => {
+  onChange = (field, value) => {
+    this.setState(
+      {
+        [field]: value
+      },
+      () => {
+        if (field === "data") {
+          this.updateDataObject(value);
+        }
+      }
+    );
+  };
+
+  updateDataObject = data => {
+    const dataArray = data.split(",");
     this.setState({
-      [file]: value
+      dataObject: getCountryWithLimit(dataArray.length).map((country, index) =>
+        country.set("value", dataArray[index])
+      )
     });
   };
 
   render() {
-    const { mode, data, color } = this.state;
-
+    const { mode, data, color, dataObject } = this.state;
+    console.log(dataObject);
     return (
       <div className="chart-container">
         <Row>
@@ -54,7 +71,7 @@ class ChartContainer extends React.Component {
           </Col>
           <Col md={6}>
             <div className="chart-container__chart">
-              {mode === BAR ? <Bar /> : mode === LINE ? <Line /> : null}
+              <Bar />
             </div>
           </Col>
         </Row>

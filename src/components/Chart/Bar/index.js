@@ -1,3 +1,5 @@
+import "./style.scss";
+
 import { ResponsiveBar } from "@nivo/bar";
 import PropsType from "prop-types";
 import React from "react";
