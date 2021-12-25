@@ -3,42 +3,26 @@ import "./style.scss";
 import { ResponsiveBar } from "@nivo/bar";
 import PropsType from "prop-types";
 import React from "react";
-let data = [
-  {
-    id: "One Plus",
-    label: "Apple",
-    value: 350
-  },
-  {
-    id: "Samsung",
-    label: "Samsung",
-    value: 280
-  },
-  {
-    id: "Nokia  C",
-    label: "Nokia",
-    value: 20
-  }
-];
 
 const Bar = props => {
-  data = data.sort((a, b) => a.value - b.value);
-  const { height } = props;
-
+  const { height, data, color } = props;
   return (
     <div className="chart-bar">
       <ResponsiveBar
         height={height}
         layout="vertical"
         margin={{
-          top: 15,
-          right: 0,
-          bottom: 5,
-          left: 35
+          top: 50,
+          right: 60,
+          bottom: 50,
+          left: 60
         }}
         data={data}
-        colors={["#cce4f2"]}
-        label={label => label.data.id}
+        colors={[color]}
+        label={country => country.data.value}
+        keys={["value"]}
+        indexBy="name"
+        labelFormat={d => <tspan y={0}>{d}</tspan>}
       />
     </div>
   );
@@ -46,12 +30,14 @@ const Bar = props => {
 
 Bar.propTypes = {
   data: PropsType.array,
-  height: PropsType.number
+  height: PropsType.number,
+  color: PropsType.string
 };
 
 Bar.defaultProps = {
   data: [],
-  height: 400
+  height: 400,
+  color: ""
 };
 
 export default Bar;
