@@ -12,7 +12,7 @@ class Input extends Component {
   };
 
   render() {
-    const { label, type } = this.props;
+    const { label, type, classNameWrapper } = this.props;
     let InputElement;
     if (type === SELECT) {
       InputElement = <Select {...this.props} onChange={this.onChange} />;
@@ -23,8 +23,8 @@ class Input extends Component {
     }
 
     return (
-      <Form.Group controlId="formFile" className="mb-3">
-        <Form.Label>{label}</Form.Label>
+      <Form.Group controlId="formFile" className={classNameWrapper}>
+        {label && <Form.Label>{label}</Form.Label>}
         {InputElement}
       </Form.Group>
     );
@@ -34,13 +34,15 @@ class Input extends Component {
 Input.propTypes = {
   type: PropsType.string,
   label: PropsType.string,
-  onChange: PropsType.func.isRequired
+  onChange: PropsType.func.isRequired,
+  classNameWrapper: PropsType.string
 };
 
 Input.defaultProps = {
   label: "",
   type: "",
-  onChange: () => null
+  onChange: () => null,
+  classNameWrapper: ""
 };
 
 export default Input;

@@ -1,10 +1,11 @@
 import "./App.scss";
 
 import React from "react";
-import { Container } from "react-bootstrap";
+
+import Home from "../pages/home";
 
 const App = () => {
-  return <Container />;
+  return <Home />;
 };
 
 export default App;
