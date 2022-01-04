@@ -2,8 +2,7 @@ import PropsType from "prop-types";
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 
-import { COLOR, SELECT } from "../../constants/inputType";
-import Color from "./Color";
+import { SELECT } from "../../constants/inputType";
 import Select from "./Select";
 
 class Input extends Component {
@@ -17,8 +16,6 @@ class Input extends Component {
     let InputElement;
     if (type === SELECT) {
       InputElement = <Select {...this.props} onChange={this.onChange} />;
-    } else if (type === COLOR) {
-      InputElement = <Color {...this.props} onChange={this.onChange} />;
     } else {
       InputElement = (
         <Form.Control type={type} {...this.props} onChange={this.onChange} />
