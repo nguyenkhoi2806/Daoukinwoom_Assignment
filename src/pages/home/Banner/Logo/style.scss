@@ -1,6 +1,6 @@
-@import "../../../assets//variable";
+@import "../../../../assets//variable";
 
-.left-content {
+.logo {
   display: flex;
   justify-content: space-between;
   padding-right: 40px;
@@ -14,7 +14,7 @@
     }
   }
 
-  &__logo {
+  &__image {
     img {
       width: 176px;
     }
