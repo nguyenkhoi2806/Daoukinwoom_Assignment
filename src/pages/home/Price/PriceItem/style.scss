@@ -1,10 +1,11 @@
 @import "../../../../assets/variable";
 
 .price {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
 
-  @media screen and (min-with: $media-sm) {
-    margin-bottom: 0;
+
+  @media screen and (min-width: $media-lg) {
+   margin-bottom: 0;
   }
 }
 

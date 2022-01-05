@@ -1,0 +1,15 @@
+@import "../../../assets/variable";
+
+.footer {
+  border-top: 1px solid rgba(153, 153, 153, 0.46);
+  background-color: #f3f9ff;
+  padding: 1.25rem 0 0 0;
+
+  @media screen and (min-width: $media-sm) {
+    padding: 0;
+  }
+
+  @media screen and (min-width: $media-lg) {
+    padding: 0 15%;
+  }
+}

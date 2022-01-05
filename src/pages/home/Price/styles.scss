@@ -6,7 +6,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
-  @media screen and (min-with: $media-sm) {
+  @media screen and (min-width: $media-sm) {
     padding-top: 120px;
     padding-bottom: 130px;
   }
