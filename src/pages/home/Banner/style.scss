@@ -27,6 +27,7 @@
 
     @media screen and (min-width: $media-lg) {
       width: 60%;
+      overflow: hidden;
     }
 
     &-service {

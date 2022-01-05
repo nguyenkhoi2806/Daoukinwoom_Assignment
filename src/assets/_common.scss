@@ -5,3 +5,11 @@ html {
 body {
   font-family: 'Noto Sans';
 }
+
+ul {
+  list-style: none;
+
+  li {
+    margin-bottom: 10/16 + rem;
+  }
+}
