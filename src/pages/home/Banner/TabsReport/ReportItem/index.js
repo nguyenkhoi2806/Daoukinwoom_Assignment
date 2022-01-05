@@ -1,4 +1,4 @@
-import PropsType from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 import { Col } from "react-bootstrap";
 
@@ -17,8 +17,8 @@ const ReportItem = ({ number, description }) => {
 };
 
 ReportItem.propTypes = {
-  number: PropsType.string,
-  description: PropsType.string
+  number: PropTypes.string,
+  description: PropTypes.string
 };
 
 ReportItem.defaultProps = {

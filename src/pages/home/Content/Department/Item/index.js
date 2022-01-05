@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-import PropsType from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 
 const Item = props => {
@@ -17,8 +17,8 @@ const Item = props => {
 };
 
 Item.propTypes = {
-  name: PropsType.string,
-  description: PropsType.string
+  name: PropTypes.string,
+  description: PropTypes.string
 };
 
 Item.defaultProps = {

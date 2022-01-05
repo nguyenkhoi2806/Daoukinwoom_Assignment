@@ -1,0 +1,73 @@
+@import "../../../../assets/variable";
+
+.price {
+  margin-bottom: 1rem;
+
+  @media screen and (min-with: $media-sm) {
+    margin-bottom: 0;
+  }
+}
+
+
+.price-item {
+  background-color: white;
+  border-radius: 0.625rem;
+  padding: 2.5rem;
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+  border: 1px solid $border-color;
+  height: 100%;
+  justify-content: space-between;
+  display: grid;
+  align-items: baseline;
+  
+  &--active {
+    border: 2px solid #e6367e;
+  }
+
+  &--verified {
+    background: #e6367e;
+    color: white;
+    .price-item {
+      &__name {
+        color: white;
+      }
+    }
+  }
+
+  &__name {
+    display: grid;
+    color: $primary;
+    margin-bottom: 1.75rem;
+
+    strong {
+      font-size: 1.375rem;
+    }
+
+    &-detail {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__money {
+    display: flex;
+    align-items: center;
+
+    &-number {
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-right: 10px;
+
+      &-free {
+        font-size: 4rem;
+      }
+    }
+
+    &-currency {
+      display: grid;
+
+      &-month {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-import PropsType from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -24,9 +24,9 @@ const Department = props => {
 };
 
 Department.propTypes = {
-  name: PropsType.string,
-  leftHtml: PropsType.node,
-  rightHtml: PropsType.node
+  name: PropTypes.string,
+  leftHtml: PropTypes.node,
+  rightHtml: PropTypes.node
 };
 
 Department.defaultProps = {
