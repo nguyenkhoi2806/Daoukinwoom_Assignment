@@ -1,0 +1,32 @@
+@import "../../../../assets//variable";
+
+.menu-top {
+  padding-top: 14px;
+  padding-bottom: 8px;
+  background-color: $primary;
+  color: white;
+  justify-content: right;
+  display: flex;
+
+  @media screen and (min-width: $media-lg) {
+    padding-right: 65px;
+  }
+
+  &__menu {
+    display: content;
+    width: max-content;
+
+    @media screen and (min-width: $media-lg) {
+      margin-left: 80px;
+    }
+  }
+
+  .form-select {
+    background: transparent;
+    color: white;
+    border: none;
+    background-image: url("../../../../assets/images/arrown-down.png");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+  }
+}

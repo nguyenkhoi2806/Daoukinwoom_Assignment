@@ -1,0 +1,29 @@
+@import "../../../../assets//variable";
+
+.menu-service {
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  justify-content: center;
+
+  @media screen and (min-width: $media-lg) {
+    padding-left: 1rem;
+  }
+
+  &__item {
+    cursor: pointer;
+    margin-left: 30px; 
+    word-break: keep-all;
+
+    @media screen and (min-width: $media-lg) {
+      margin: 0 60px;
+    }
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+}

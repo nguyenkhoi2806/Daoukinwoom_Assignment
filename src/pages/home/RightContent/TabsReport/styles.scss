@@ -1,0 +1,65 @@
+@import "../../../../assets/variable";
+
+@mixin tabStyle {
+  background-color: transparent;
+  border: 0;
+  color: white;
+}
+
+.tab-report {
+  margin-top: 80px;
+
+  .nav {
+    border: 0;
+    justify-content: center;
+
+    li {
+      font-size: 22px;
+
+      button {
+        @include tabStyle;
+        opacity: 0.5;
+        padding: 1rem 2rem;
+      }
+    }
+
+    &-link.active {
+      @include tabStyle;
+      opacity: 1;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  .tab-content {
+    .container {
+      padding: 0 15%;
+    }
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    color: $secondaryColor;
+    margin-top: 1.875rem;
+
+    &-number {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      
+      @media screen  and (min-width: $media-lg) {
+        font-size: 4rem;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      display: grid;
+      text-align: center;
+      
+      @media screen  and (min-width: $media-lg) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

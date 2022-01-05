@@ -1,0 +1,39 @@
+@import "../../../assets//variable";
+
+.left-content {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40px;
+
+  &__home-menu {
+    span {
+      margin-left: 17px;
+      font-weight: bold;
+      font-size: 14px;
+      align-self: center;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 176px;
+    }
+  }
+
+  &__company {
+    margin: 3rem 0; 
+
+    @media screen and (min-width: $media-lg) {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+
+      @media screen and (min-width: $media-lg) {
+        font-size: 56px;
+      }
+    }
+  }
+}
