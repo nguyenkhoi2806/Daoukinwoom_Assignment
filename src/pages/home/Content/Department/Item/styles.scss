@@ -1,0 +1,48 @@
+@import "../../../../../assets/variable";
+
+.department {
+  &__item {
+    display: grid;
+    align-items: center;
+    margin: 10px 7px;
+
+    @media screen and (min-width: $media-lg) {
+        margin: 10px 25px;
+    }
+
+    &-name {
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &-content {
+      margin: 1rem 0;
+      font-size: 1rem;
+      color: $gray;
+    }
+
+    &-bottom {
+      background-color: $primary;
+      padding: 0.5rem 1rem;
+      width: fit-content;
+      color: white;
+      border-radius: 0.5rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__item-list {
+    display: inherit;
+    justify-content: center;
+
+    &--top {
+      display: flex;
+    }
+
+    &--bottom {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
