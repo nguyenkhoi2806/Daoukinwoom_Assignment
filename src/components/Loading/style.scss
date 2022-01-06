@@ -19,7 +19,7 @@
   justify-content: flex-end;
 
   &__text {
-    color: $primary;
+    color: red;
     font-size: 14/16 + rem;
     font-style: italic;
     line-height: calc(19 / 14);
@@ -30,6 +30,7 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
+    border: 6px solid $secondaryColor;
     border-top-color: $primary;
     animation: spin 2s linear infinite;
   }
