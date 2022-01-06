@@ -3,13 +3,14 @@
 .menu-service {
   list-style: none;
   color: white;
-  display: flex;
   padding-left: 1rem;
   padding-top: 1rem;
+  padding-right: 1rem;
   justify-content: center;
 
-  @media screen and (min-width: $media-lg) {
-    padding-left: 1rem;
+  @media screen and (min-width: $media-sm) {
+    padding: 0.5rem 0.5rem;
+    display: flex;
   }
 
   &__item {
@@ -17,7 +18,7 @@
     margin-left: 30px; 
     word-break: keep-all;
 
-    @media screen and (min-width: $media-lg) {
+    @media screen and (min-width: $media-sm) {
       margin: 0 60px;
     }
   }

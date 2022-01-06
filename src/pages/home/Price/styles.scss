@@ -1,13 +1,12 @@
 @import "../../../assets/variable";
 
-.price-container {
-  padding: 0 15%;
+.price-list {
+  padding: 0 10%;
   background-color: #f3f9ff;
   padding-top: 60px;
   padding-bottom: 60px;
 
   @media screen and (min-width: $media-sm) {
-    padding-top: 120px;
-    padding-bottom: 130px;
+    padding: 120px 15% 130px 15%; 
   }
 }

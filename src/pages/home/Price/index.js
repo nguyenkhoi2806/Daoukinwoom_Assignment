@@ -7,7 +7,7 @@ import PriceItem from "./PriceItem";
 
 const Price = () => {
   return (
-    <div className="price-container">
+    <div className="price-list">
       <Row>
         <PriceItem
           name="Free Test"

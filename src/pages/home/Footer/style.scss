@@ -5,11 +5,10 @@
   background-color: #f3f9ff;
   padding: 1.25rem 0 0 0;
 
+  &-container {
+    max-width: 1400px;
+  }
   @media screen and (min-width: $media-sm) {
     padding: 0;
-  }
-
-  @media screen and (min-width: $media-lg) {
-    padding: 0 15%;
   }
 }

@@ -26,7 +26,18 @@ const TabReport = () => {
             </Row>
           </Container>
         </Tab>
-        <Tab eventKey="future" title="Future" />
+        <Tab eventKey="future" title="Future">
+          <Container>
+            <Row>
+              <ReportItem
+                number="6"
+                description="<span>different</span> <span>IT Software</span> <span>Networks</span>"
+              />
+              <ReportItem number="32" description="partners" />
+              <ReportItem number="4" description="countries" />
+            </Row>
+          </Container>
+        </Tab>
       </Tabs>
     </div>
   );

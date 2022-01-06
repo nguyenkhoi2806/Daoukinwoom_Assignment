@@ -7,7 +7,13 @@
 }
 
 .tab-report {
-  margin-top: 80px;
+  margin-top: 40px;
+  padding-bottom: 35px;
+
+  @media screen  and (min-width: $media-lg) {
+    margin-top: 80px;
+  padding-bottom: 0;
+  }
 
   .nav {
     border: 0;
