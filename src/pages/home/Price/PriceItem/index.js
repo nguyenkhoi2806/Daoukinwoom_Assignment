@@ -6,6 +6,7 @@ import React from "react";
 import { Col } from "react-bootstrap";
 
 import Dollar from "../../../../assets/images/dollar.png";
+import { formatNumberToMoney } from "../../../../servives/String";
 
 const PriceItem = props => {
   const { name, description, money, classWrapper, currency } = props;
@@ -22,7 +23,7 @@ const PriceItem = props => {
               "price-item__money-number-free": money === 0
             })}
           >
-            {money}
+            {formatNumberToMoney(money)}
           </span>
           <span className="price-item__money-currency">
             <span className="price-item__money-currency-name">{currency}</span>

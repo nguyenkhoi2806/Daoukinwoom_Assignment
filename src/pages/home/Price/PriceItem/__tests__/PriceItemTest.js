@@ -34,7 +34,7 @@ describe.each(testRenderPriceItem)(
     test(description, () => {
       expect(
         priceItemComponent.find(".price-item__money-number-free").exists()
-      ).toBe(money === 0);
+      ).toBe(money == 0);
     });
   }
 );
