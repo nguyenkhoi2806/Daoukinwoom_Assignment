@@ -1,4 +1,4 @@
-@import '../../assets/variables';
+@import '../../assets/variable';
 
 .loading-wrapper {
   min-height: 250px;
@@ -19,7 +19,7 @@
   justify-content: flex-end;
 
   &__text {
-    color: $text-color;
+    color: $primary;
     font-size: 14/16 + rem;
     font-style: italic;
     line-height: calc(19 / 14);
@@ -30,7 +30,6 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    border: 6px solid $background;
     border-top-color: $primary;
     animation: spin 2s linear infinite;
   }
