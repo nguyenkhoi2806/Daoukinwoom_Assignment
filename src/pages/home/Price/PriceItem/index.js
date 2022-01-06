@@ -9,7 +9,6 @@ import Dollar from "../../../../assets/images/dollar.png";
 
 const PriceItem = props => {
   const { name, description, money, classWrapper, currency } = props;
-
   return (
     <Col sm={6} md={6} lg={3} className="price">
       <div className={`price-item price-item--${classWrapper}`}>

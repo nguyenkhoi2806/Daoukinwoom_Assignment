@@ -15,9 +15,14 @@ const Info = props => {
       </Form.Label>
       <Col sm="10">
         {type === "text" ? (
-          <Form.Control plaintext readOnly defaultValue={value} />
+          <Form.Control
+            data-test="info-text"
+            plaintext
+            readOnly
+            defaultValue={value}
+          />
         ) : type === "image" ? (
-          <Image src={value} />
+          <Image data-test="info-image" src={value} />
         ) : null}
       </Col>
     </Form.Group>
