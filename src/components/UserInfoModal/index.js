@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Modal } from "react-bootstrap";
 
+import AuthenticatedUser from "../../models/AuthenticatedUser";
 import Info from "./Info";
 
 const UserInfoModal = props => {
-  const { onHide } = props;
+  const { onHide, authenticateUser } = props;
 
   return (
     <Modal size="lg" show={true} onHide={onHide}>
@@ -14,16 +15,16 @@ const UserInfoModal = props => {
         <Modal.Title>User information</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Info label="Name" value="Jimmie Thompson" />
-        <Info label="Username" value="Mona_Kassulke14" />
+        <Info label="Name" value={authenticateUser.getName()} />
+        <Info label="Username" value={authenticateUser.getUsername()} />
         <Info
           label="Avatar"
           type="image"
-          value="https://cdn.fakercloud.com/avatars/sergeysafonov_128.jpg"
+          value={authenticateUser.getAvatar()}
         />
         <Info
-          label="created at"
-          value={moment("2021-10-21T08:36:53.248Z").format("MM/DD/YYYY")}
+          label="Created at"
+          value={moment(authenticateUser.getCreatedAt()).format("MM/DD/YYYY")}
         />
       </Modal.Body>
     </Modal>
@@ -31,7 +32,8 @@ const UserInfoModal = props => {
 };
 
 UserInfoModal.propTypes = {
-  onHide: PropTypes.func
+  onHide: PropTypes.func,
+  authenticateUser: PropTypes.instanceOf(AuthenticatedUser)
 };
 
 UserInfoModal.defaultProps = {

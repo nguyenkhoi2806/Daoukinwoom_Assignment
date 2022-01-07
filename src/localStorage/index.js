@@ -1,28 +1,25 @@
 import AuthenticatedUser from "../models/AuthenticatedUser";
 
-export const loadState = () => {
+export const loadUserFromStorage = () => {
   try {
     const serializedState = localStorage.getItem("state");
     if (serializedState === null) {
-      return undefined;
+      return null;
     }
     const initialState = JSON.parse(serializedState);
-    if (initialState.authenticatedUser) {
-      initialState.authenticatedUser = new AuthenticatedUser(
-        initialState.authenticatedUser.state
-      );
+    if (initialState.data) {
+      return AuthenticatedUser.create(initialState.data);
     }
-    return initialState;
   } catch (err) {
-    return undefined;
+    return null;
   }
 };
 
-export const saveState = state => {
+export const saveUserToStorage = state => {
   try {
     let currentState = localStorage.getItem("state");
     currentState = currentState ? JSON.parse(currentState) : {};
-    sessionStorage.setItem(
+    localStorage.setItem(
       "state",
       JSON.stringify({ ...currentState, ...state })
     );

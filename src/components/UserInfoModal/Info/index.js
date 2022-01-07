@@ -10,10 +10,10 @@ const Info = props => {
   const { label, value, type } = props;
   return (
     <Form.Group as={Row} className="info-user">
-      <Form.Label column sm="2">
+      <Form.Label column xs="4">
         {label}
       </Form.Label>
-      <Col sm="10">
+      <Col xs="8">
         {type === "text" ? (
           <Form.Control
             data-test="info-text"

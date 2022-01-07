@@ -4,21 +4,26 @@ import React from "react";
 
 import Loading from "../components/Loading";
 
-const withLoading = (WrappedComponent, isLoading, ...props) => {
-  return isLoading ? (
-    <div className={classnames("loading-wrapper", props.loadingWrapperClass)}>
-      <Loading />
-    </div>
-  ) : (
-    <WrappedComponent {...props} />
-  );
-};
-withLoading.propTypes = {
-  isLoading: PropTypes.bool
-};
+const withLoading = WrappedComponent => {
+  const withLoadingChildren = ({ isLoading, ...props }) => {
+    return isLoading ? (
+      <div className={classnames("loading-wrapper", props.loadingWrapperClass)}>
+        <Loading />
+      </div>
+    ) : (
+      <WrappedComponent {...props} />
+    );
+  };
 
-withLoading.defaultProps = {
-  isLoading: false
+  withLoadingChildren.propTypes = {
+    isLoading: PropTypes.bool
+  };
+
+  withLoadingChildren.defaultProps = {
+    isLoading: false
+  };
+
+  return withLoadingChildren;
 };
 
 export default withLoading;

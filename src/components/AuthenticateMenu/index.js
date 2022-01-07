@@ -2,20 +2,18 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
+import AuthenticatedUser from "../../models/AuthenticatedUser";
+import Image from "../Image";
+
 const AuthenticateMenu = props => {
-  const { handleShowUserInfoModal } = props;
+  const { handleShowUserInfoModal, authenticateUser } = props;
 
   return (
     <DropdownButton
       className="authenticate-menu"
       align="end"
       title={
-        <img
-          src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
-          width="40"
-          height="40"
-          className="rounded-circle"
-        />
+        <Image src={authenticateUser.getAvatar()} className="rounded-circle" />
       }
     >
       <Dropdown.Item
@@ -32,7 +30,8 @@ const AuthenticateMenu = props => {
 };
 
 AuthenticateMenu.propTypes = {
-  handleShowUserInfoModal: PropTypes.func
+  handleShowUserInfoModal: PropTypes.func,
+  authenticateUser: PropTypes.instanceOf(AuthenticatedUser).isRequired
 };
 
 AuthenticateMenu.defaultProps = {

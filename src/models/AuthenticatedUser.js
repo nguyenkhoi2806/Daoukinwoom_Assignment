@@ -10,6 +10,15 @@ class AuthenticatedUser extends Model {
       createdAt: null
     };
   }
+
+  static create = state => {
+    return new AuthenticatedUser({
+      name: state.name,
+      avatar: state.avatar,
+      username: state.username,
+      createdAt: state.createdAt
+    });
+  };
 }
 
 export default AuthenticatedUser;
