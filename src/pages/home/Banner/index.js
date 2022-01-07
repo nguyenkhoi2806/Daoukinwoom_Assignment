@@ -9,7 +9,7 @@ import MenuTop from "./MenuTop";
 import TabReport from "./TabsReport";
 
 const Banner = props => {
-  const { isMobile } = props;
+  const { isMobile, isIpad } = props;
 
   return (
     <div className="banner">
@@ -17,9 +17,9 @@ const Banner = props => {
         <Logo />
       </div>
       <div className="banner-right">
-        {!isMobile && <MenuTop data-test="menu-top" />}
+        {!isMobile && !isIpad && <MenuTop data-test="menu-top" />}
         <div className="banner-right-service">
-          {!isMobile ? (
+          {!isMobile && !isIpad ? (
             <MenuServices data-test="menu-service" />
           ) : (
             <MenuMobileContainer data-test="menu-mobile" />

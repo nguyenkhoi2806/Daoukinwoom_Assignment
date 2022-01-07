@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const MOBILE_WIDTH = 768;
+const MD_WIDTH = 768;
 
 const withResizing = WrappedComponent => {
   const ResizingComponent = props => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_WIDTH);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < MD_WIDTH);
 
     useEffect(() => {
       handleResize();
@@ -17,9 +17,9 @@ const withResizing = WrappedComponent => {
     const handleResize = () => {
       const width = window.innerWidth;
 
-      if (width < MOBILE_WIDTH && !isMobile) {
+      if (width < MD_WIDTH && !isMobile) {
         setIsMobile(true);
-      } else if (width >= MOBILE_WIDTH && isMobile) {
+      } else if (width >= MD_WIDTH && isMobile) {
         setIsMobile(false);
       }
     };
@@ -28,6 +28,7 @@ const withResizing = WrappedComponent => {
       <WrappedComponent
         isMobile={isMobile}
         handleResize={handleResize}
+        isIpad={window.innerWidth === MD_WIDTH}
         {...props}
       />
     );

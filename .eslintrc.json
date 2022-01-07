@@ -19,7 +19,7 @@
     "react/prop-types": [
       "error",
       {
-        "ignore": ["isMobile"]
+        "ignore": ["isMobile", "isIpad"]
       }
     ],
     "react/jsx-no-duplicate-props": "error",
