@@ -5,8 +5,7 @@ export default class AuthApi {
     return axios.get("https://6164054db55edc00175c1cc9.mockapi.io/", {
       withCredentials: false,
       headers: {
-        "Access-Control-Allow-Credentials": false,
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
       }
     });
   };

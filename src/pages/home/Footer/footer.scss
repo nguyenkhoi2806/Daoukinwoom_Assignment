@@ -8,6 +8,20 @@
   &-container {
     max-width: 1400px;
   }
+
+  &-email,
+  &-address {
+    font-family: 'DMSans';
+  }
+
+  &-email {
+    font-size: 14px;
+  }
+
+  &-address {
+    font-size: 15px;
+  }
+
   @media screen and (min-width: $media-sm) {
     padding: 0;
   }

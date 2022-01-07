@@ -21,7 +21,7 @@ const Footer = () => {
                 <li>Business resigtration: 0315421202</li>
                 <li>
                   <span>Tel: 028-3520-2367</span>
-                  <span>sales@dkinno.com</span>
+                  <span className="footer-email">sales@dkinno.com</span>
                 </li>
                 <li>Copyright 2021 DaouKiwoom Innocation C0., Ltd</li>
               </>
@@ -43,7 +43,7 @@ const Footer = () => {
             name="Korea Office"
             content={
               <>
-                <li>
+                <li className="footer-address">
                   5th Fl, C-dong, PDC, 242, Pangyo-ro, Bundang-gu, Seongnam-si,
                   Gyeonggi-do, Korea
                 </li>
