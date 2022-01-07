@@ -1,4 +1,4 @@
-@import "../../../../assets/variable";
+@import "../../../../assets/common/variable";
 
 @mixin tabStyle {
   background-color: transparent;
@@ -7,12 +7,11 @@
 }
 
 .tab-report {
-  margin-top: 40px;
   padding-bottom: 35px;
 
   @media screen  and (min-width: $media-lg) {
     margin-top: 80px;
-  padding-bottom: 0;
+    padding-bottom: 0;
   }
 
   .nav {
@@ -38,7 +37,11 @@
 
   .tab-content {
     .container {
-      padding: 0 15%;
+      padding: 0 5%;
+
+      @media screen  and (min-width: $media-sm) {
+        padding: 0 15%;
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./tabs-report.scss";
 
 import React from "react";
 import { Container, Row, Tab, Tabs } from "react-bootstrap";

@@ -1,4 +1,4 @@
-@import "../../../../../assets/variable";
+@import "../../../../../assets/common/variable";
 
 .department {
   &__item {
@@ -7,13 +7,18 @@
     margin: 10px 7px;
 
     @media screen and (min-width: $media-lg) {
-        margin: 10px 25px;
+      margin: 10px 25px;
     }
 
     &-name {
-      font-size: 2rem;
-      font-weight: bold;
+      font-size: 1.5rem;
       text-transform: uppercase;
+      font-family: 'Manrope';
+      font-weight: bold;
+
+      @media screen and (min-width: $media-sm) {
+        font-size: 2rem;
+      }
     }
 
     &-content {

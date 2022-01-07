@@ -1,2 +1,30 @@
-@import './setting'; 
-@import './common';
+@import "./common/fonts";
+@import "./common/variable";
+
+@import "~bootstrap/scss/bootstrap"; 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+
+html {
+  word-break: break-word;
+}
+
+body {
+  font-family: "Noto Sans";
+}
+
+ul {
+  list-style: none;
+
+  li {
+    margin-bottom: 10/16 + rem;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

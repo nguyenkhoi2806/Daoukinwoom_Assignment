@@ -22,7 +22,7 @@ const Input = props => {
   }
 
   return (
-    <Form.Group className={"form-group" + classnamewrapper}>
+    <Form.Group className={"form-group " + classnamewrapper}>
       {label && <Form.Label>{label}</Form.Label>}
       {InputElement}
     </Form.Group>

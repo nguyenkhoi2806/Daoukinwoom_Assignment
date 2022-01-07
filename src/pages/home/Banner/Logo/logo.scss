@@ -1,11 +1,21 @@
-@import "../../../../assets//variable";
+@import "../../../../assets/common/variable";
 
 .logo {
   display: flex;
   justify-content: space-between;
-  padding-right: 40px;
+  
+  @media screen and (min-width: $media-lg) { 
+    padding-right: 40px;
+    padding-top: 3.125rem;
+  }
 
   &__home-menu {
+    display: none;
+
+    @media screen and (min-width: $media-lg) { 
+      display: block;
+    }
+
     span {
       margin-left: 17px;
       font-weight: bold;
@@ -21,15 +31,18 @@
   }
 
   &__company {
-    margin: 3rem 0; 
+    margin: 1rem 0; 
+    display: none;
 
     @media screen and (min-width: $media-lg) {
       margin: 0;
+      display: block;
     }
 
     h1 {
       font-size: 30px;
       font-weight: bold;
+      margin: 0;
 
       @media screen and (min-width: $media-lg) {
         font-size: 56px;

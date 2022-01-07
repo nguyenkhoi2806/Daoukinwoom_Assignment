@@ -1,10 +1,10 @@
-import "./style.scss";
+import "./authenticate-menu.scss";
 
 import React, { useEffect, useState } from "react";
 
-import AuthApi from "../../../../../api/AuthApi";
-import UserInfoModal from "../../../../../components/UserInfoModal";
-import AuthenticateMenu from "./";
+import AuthApi from "../../api/AuthApi";
+import UserInfoModal from "../UserInfoModal";
+import AuthenticateMenu from ".";
 
 const AuthenticateMenuContainer = () => {
   const [isShowUserInfoModal, setShowUserInfoModal] = useState(false);

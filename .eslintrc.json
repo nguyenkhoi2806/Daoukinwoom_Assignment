@@ -1,7 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true, 
+    "es2021": true,
     "jest": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
@@ -16,7 +16,12 @@
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "react/prop-types": ["error"],
+    "react/prop-types": [
+      "error",
+      {
+        "ignore": ["isMobile"]
+      }
+    ],
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-closing-tag-location": "error",

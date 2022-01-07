@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./description.scss";
 
 import React from "react";
 

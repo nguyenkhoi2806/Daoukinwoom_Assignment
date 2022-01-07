@@ -1,12 +1,11 @@
-@import "../../../assets/variable";
+@import "../../../assets/common/variable";
 
 .price-list {
-  padding: 0 10%;
   background-color: #f3f9ff;
   padding-top: 60px;
   padding-bottom: 60px;
-
+  
   @media screen and (min-width: $media-sm) {
-    padding: 120px 15% 130px 15%; 
+    padding: 120px 0 130px 0; 
   }
 }

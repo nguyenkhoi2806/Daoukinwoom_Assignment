@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./loading.scss";
 
 import PropTypes from "prop-types";
 import React from "react";

@@ -1,0 +1,14 @@
+@import "../../../assets/common/variable";
+
+.home-page-content {
+  text-align: center;
+  padding-top: 2rem;
+
+  @media screen and (min-width: $media-sm) {
+    padding-top: 4.8125rem;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+}

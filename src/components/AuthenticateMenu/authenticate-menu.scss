@@ -1,0 +1,12 @@
+@import "../../assets/common/variable";
+
+.authenticate-menu {
+  .btn-primary {
+    background-color: $primary;
+    
+    @media screen and (min-width: $media-sm) {
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

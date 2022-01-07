@@ -1,0 +1,24 @@
+@import "../../../../assets/common/variable";
+
+.department {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  @media screen and (min-width: $media-sm) {
+    padding: 5.3125rem 0; 
+  }
+
+
+  &:nth-child(odd) {  
+    background-color: $grey;
+  }
+
+  img {
+    width: 280px;
+  }
+
+  &-right, 
+  &-left {
+    align-self: center;
+  }
+}

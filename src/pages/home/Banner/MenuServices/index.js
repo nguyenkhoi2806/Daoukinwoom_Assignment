@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./menu-services.scss";
 
 import React from "react";
 

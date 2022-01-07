@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./department-item.scss";
 
 import PropTypes from "prop-types";
 import React from "react";

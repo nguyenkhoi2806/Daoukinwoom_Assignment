@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./price-item.scss";
 
 import classnames from "classnames";
 import PropTypes from "prop-types";

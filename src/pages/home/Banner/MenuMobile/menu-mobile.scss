@@ -1,0 +1,58 @@
+.menu-mobile-button {
+  justify-content: right;
+  background-image: url("../../../../assets/images/hamburger-button.png");
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-color: white;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+
+.menu-mobile {
+  width: 70%;
+
+  .menu-service {
+    padding: 0;
+
+    &__item {
+      color: black;
+      margin: 1rem 0;
+    }
+  }
+
+  &__menu {
+    .form-select {
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  .accordion {
+    &-item {
+      border: 0;
+
+      button {
+        padding: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-header {
+      button {
+        &::after {
+          background-size: 0.9rem;
+          position: absolute;
+          right: 6px;
+        }
+      }
+    }
+
+    &-body {
+      padding: 0;
+    }
+  }
+}

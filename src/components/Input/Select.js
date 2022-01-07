@@ -3,10 +3,17 @@ import React from "react";
 import { FormSelect } from "react-bootstrap";
 
 const Select = props => {
-  const { options, onChange, value, isShowPleaseChoose, name } = props;
+  const {
+    options,
+    onChange,
+    value,
+    isShowPleaseChoose,
+    name,
+    pleaseChooseText
+  } = props;
   return (
     <FormSelect onChange={onChange} value={value} name={name}>
-      {isShowPleaseChoose && <option>Please choose </option>}
+      {isShowPleaseChoose && <option> {pleaseChooseText} </option>}
       {options.map((mode, key) => (
         <option key={`${mode}-${key}`}>{mode} </option>
       ))}
@@ -19,14 +26,16 @@ Select.propTypes = {
   onChange: PropsType.func.isRequired,
   value: PropsType.string,
   isShowPleaseChoose: PropsType.bool,
-  name: PropsType.string
+  name: PropsType.string,
+  pleaseChooseText: PropsType.string
 };
 
 Select.defaultProps = {
   options: [],
   value: "",
-  isShowPleaseChoose: false,
-  name: ""
+  isShowPleaseChoose: true,
+  name: "",
+  pleaseChooseText: "Please Choose"
 };
 
 export default Select;
