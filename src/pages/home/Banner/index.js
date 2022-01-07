@@ -3,7 +3,7 @@ import "./banner.scss";
 import React from "react";
 
 import Logo from "./Logo";
-import MenuMobile from "./MenuMobile";
+import MenuMobileContainer from "./MenuMobile/MenuMobileContainer";
 import MenuServices from "./MenuServices";
 import MenuTop from "./MenuTop";
 import TabReport from "./TabsReport";
@@ -17,9 +17,13 @@ const Banner = props => {
         <Logo />
       </div>
       <div className="banner-right">
-        {!isMobile && <MenuTop />}
+        {!isMobile && <MenuTop data-test="menu-top" />}
         <div className="banner-right-service">
-          {!isMobile ? <MenuServices /> : <MenuMobile />}
+          {!isMobile ? (
+            <MenuServices data-test="menu-service" />
+          ) : (
+            <MenuMobileContainer data-test="menu-mobile" />
+          )}
           <TabReport />
         </div>
       </div>
