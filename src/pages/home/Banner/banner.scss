@@ -36,8 +36,7 @@
       background-position: bottom;
       background-size: cover;
 
-      @media screen and (min-width: $media-lg) {
-        background-size: 100%;
+      @media screen and (min-width: $media-lg) { 
         height: 100%;
         padding-top: 24px;
         background-position: bottom;

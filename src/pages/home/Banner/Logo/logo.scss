@@ -1,18 +1,20 @@
 @import "../../../../assets/common/variable";
 
 .logo {
-  display: flex;
-  justify-content: space-between;
-  
-  @media screen and (min-width: $media-lg) { 
-    padding-right: 40px;
-    padding-top: 3.9rem;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: $media-lg) {
+      padding-right: 40px;
+      margin-top: 3.9rem;
+    }
   }
 
   &__home-menu {
     display: none;
 
-    @media screen and (min-width: $media-lg) { 
+    @media screen and (min-width: $media-lg) {
       display: flex;
       align-self: baseline;
     }
@@ -32,7 +34,7 @@
   }
 
   &__company {
-    margin: 1rem 0; 
+    margin: 1rem 0;
     display: none;
 
     @media screen and (min-width: $media-lg) {
