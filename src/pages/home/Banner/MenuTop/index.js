@@ -11,19 +11,19 @@ const MenuTop = () => {
     <div className="menu-top">
       <AuthenticateMenuContainer />
       <Input
-        classnamewrapper="menu-top__menu"
+        classNameWrapper="menu-top__menu"
         type={SELECT}
         options={["En"]}
         isShowPleaseChoose={false}
       />
       <Input
-        classnamewrapper="menu-top__menu"
+        classNameWrapper="menu-top__menu"
         type={SELECT}
         options={["Company"]}
         isShowPleaseChoose={false}
       />
       <Input
-        classnamewrapper="menu-top__menu"
+        classNameWrapper="menu-top__menu"
         type={SELECT}
         options={["Partner Market Place"]}
         isShowPleaseChoose={false}
