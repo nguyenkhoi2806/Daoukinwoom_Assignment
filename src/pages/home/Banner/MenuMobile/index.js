@@ -30,19 +30,19 @@ const MenuMobile = props => {
           </Accordion.Item>
         </Accordion>
         <Input
-          classnamewrapper="menu-mobile__menu"
+          classNameWrapper="menu-mobile__menu"
           type={SELECT}
           options={["En"]}
           pleaseChooseText="Language"
         />
         <Input
-          classnamewrapper="menu-mobile__menu"
+          classNameWrapper="menu-mobile__menu"
           type={SELECT}
           options={["Company"]}
           pleaseChooseText="Department"
         />
         <Input
-          classnamewrapper="menu-mobile__menu"
+          classNameWrapper="menu-mobile__menu"
           type={SELECT}
           options={["Partner Market Place"]}
           pleaseChooseText="Market"
