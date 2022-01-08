@@ -6,7 +6,6 @@
   @media screen and (min-width: $media-lg) {
     height: 80vh;
     display: flex;
-    width: 100%;
   }
 
   &-left {
@@ -35,9 +34,9 @@
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: cover;
+      height: 100%;
 
       @media screen and (min-width: $media-lg) { 
-        height: 100%;
         padding-top: 24px;
         background-position: bottom;
       }
