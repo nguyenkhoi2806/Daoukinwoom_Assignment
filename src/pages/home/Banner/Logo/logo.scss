@@ -6,18 +6,19 @@
   
   @media screen and (min-width: $media-lg) { 
     padding-right: 40px;
-    padding-top: 3.125rem;
+    padding-top: 3.9rem;
   }
 
   &__home-menu {
     display: none;
 
     @media screen and (min-width: $media-lg) { 
-      display: block;
+      display: flex;
+      align-self: baseline;
     }
 
     span {
-      margin-left: 17px;
+      margin-left: 12px;
       font-weight: bold;
       font-size: 14px;
       align-self: center;

@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const Item = props => {
-  const { name, description } = props;
+  const { name, description, classNameWrapper } = props;
   return (
-    <div className="department__item">
+    <div className={"department__item " + classNameWrapper}>
       <span
         className="department__item-content"
         dangerouslySetInnerHTML={{ __html: name }}
@@ -18,12 +18,14 @@ const Item = props => {
 
 Item.propTypes = {
   name: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  classNameWrapper: PropTypes.string
 };
 
 Item.defaultProps = {
   name: "",
-  description: ""
+  description: "",
+  classNameWrapper: ""
 };
 
 export default Item;

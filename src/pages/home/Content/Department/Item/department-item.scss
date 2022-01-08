@@ -1,6 +1,15 @@
 @import "../../../../../assets/common/variable";
 
 .department {
+  .customer,
+  .security {
+    .department {
+      &__item-content {
+        color: $primary;
+      }
+    }
+  }
+
   &__item {
     display: grid;
     align-items: center;
@@ -13,7 +22,7 @@
     &-name {
       font-size: 1.5rem;
       text-transform: uppercase;
-      font-family: 'Manrope';
+      font-family: "Manrope";
       font-weight: bold;
 
       @media screen and (min-width: $media-sm) {

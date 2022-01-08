@@ -7,6 +7,7 @@ import ComputerImage from "../../../assets/images/computer.png";
 import CustomerImage from "../../../assets/images/customer.png";
 import HrImage from "../../../assets/images/hr.png";
 import SaleImage from "../../../assets/images/sales.png";
+import SecurityImage from "../../../assets/images/security.png";
 import Department from "./Department";
 import Item from "./Department/Item";
 
@@ -68,7 +69,11 @@ const Content = () => {
         rightHtml={
           <div className="department__item">
             <span className="department__item-name">Customer</span>
-            <Item name="Customer Request Management" description="OQUFIE" />
+            <Item
+              name="Customer Request Management"
+              classNameWrapper="customer"
+              description="OQUFIE"
+            />
           </div>
         }
       />
@@ -76,10 +81,14 @@ const Content = () => {
         leftHtml={
           <div className="department__item">
             <span className="department__item-name">Security</span>
-            <Item name="SSL server" description="SECTIGO" />
+            <Item
+              name="SSL server"
+              classNameWrapper="security"
+              description="SECTIGO"
+            />
           </div>
         }
-        rightHtml={<img src={SaleImage} />}
+        rightHtml={<img src={SecurityImage} />}
       />
     </div>
   );
