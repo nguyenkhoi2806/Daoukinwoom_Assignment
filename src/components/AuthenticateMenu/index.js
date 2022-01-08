@@ -6,10 +6,19 @@ import AuthenticatedUser from "../../models/AuthenticatedUser";
 import Image from "../Image";
 
 const AuthenticateMenu = props => {
-  const { handleShowUserInfoModal, authenticateUser } = props;
+  const { handleShowUserInfoModal, authenticateUser, logOut, login } = props;
+
+  if (!authenticateUser) {
+    return (
+      <a data-test="login" onClick={login}>
+        Login
+      </a>
+    );
+  }
 
   return (
     <DropdownButton
+      data-test="authenticate-menu"
       className="authenticate-menu"
       align="end"
       title={
@@ -22,7 +31,7 @@ const AuthenticateMenu = props => {
       >
         My information
       </Dropdown.Item>
-      <Dropdown.Item className="authenticate-menu__item" href="#/action-2">
+      <Dropdown.Item className="authenticate-menu__item" onClick={logOut}>
         Logout
       </Dropdown.Item>
     </DropdownButton>
@@ -31,11 +40,16 @@ const AuthenticateMenu = props => {
 
 AuthenticateMenu.propTypes = {
   handleShowUserInfoModal: PropTypes.func,
-  authenticateUser: PropTypes.instanceOf(AuthenticatedUser).isRequired
+  authenticateUser: PropTypes.instanceOf(AuthenticatedUser),
+  logOut: PropTypes.func,
+  login: PropTypes.func
 };
 
 AuthenticateMenu.defaultProps = {
-  handleShowUserInfoModal: () => null
+  handleShowUserInfoModal: () => null,
+  authenticateUser: null,
+  logOut: () => null,
+  login: () => null
 };
 
 export default AuthenticateMenu;

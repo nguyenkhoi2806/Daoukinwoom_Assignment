@@ -4,7 +4,11 @@ import React, { useEffect, useState } from "react";
 
 import AuthApi from "../../api/AuthApi";
 import withLoading from "../../hoc/withLoading";
-import { loadUserFromStorage, saveUserToStorage } from "../../localStorage";
+import {
+  clearUserData,
+  loadUserFromStorage,
+  saveUserToStorage
+} from "../../localStorage";
 import AuthenticatedUser from "../../models/AuthenticatedUser";
 import UserInfoModal from "../UserInfoModal";
 import AuthenticateMenu from ".";
@@ -21,13 +25,15 @@ const AuthenticateMenuContainer = () => {
   };
 
   useEffect(() => {
+    initializeAuthenticateUser();
+  }, []);
+
+  const initializeAuthenticateUser = () => {
     const userFromLocalStorage = loadUserFromStorage();
     if (userFromLocalStorage) {
       setAuthenticateUser(userFromLocalStorage);
-    } else {
-      loadUserFromApi();
     }
-  }, []);
+  };
 
   const loadUserFromApi = () => {
     return new Promise((resolve, reject) => {
@@ -50,9 +56,22 @@ const AuthenticateMenuContainer = () => {
     });
   };
 
-  if (!authenticateUser) {
-    return null;
-  }
+  const logOut = () => {
+    return new Promise((resolve, reject) => {
+      setIsLoading(true);
+      clearUserData()
+        .then(() => {
+          setAuthenticateUser(null);
+          resolve();
+        })
+        .catch(error => {
+          reject(error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    });
+  };
 
   return (
     <>
@@ -60,13 +79,16 @@ const AuthenticateMenuContainer = () => {
         isLoading={isLoading}
         handleShowUserInfoModal={handleShowUserInfoModal}
         authenticateUser={authenticateUser}
+        logOut={logOut}
+        login={loadUserFromApi}
       />
-      {isShowUserInfoModal && (
-        <UserInfoModal
-          onHide={handleShowUserInfoModal}
-          authenticateUser={authenticateUser}
-        />
-      )}
+      {isShowUserInfoModal
+        && authenticateUser && (
+          <UserInfoModal
+            onHide={handleShowUserInfoModal}
+            authenticateUser={authenticateUser}
+          />
+        )}
     </>
   );
 };

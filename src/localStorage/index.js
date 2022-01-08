@@ -27,3 +27,12 @@ export const saveUserToStorage = state => {
     console.log("Cannot write in local storage");
   }
 };
+
+export const clearUserData = () => {
+  return new Promise(resolve => {
+    localStorage.removeItem("state");
+    resolve();
+  }).catch(error => {
+    console(error);
+  });
+};
