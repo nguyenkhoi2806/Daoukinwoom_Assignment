@@ -21,7 +21,7 @@ ul {
   list-style: none;
 
   li {
-    margin-bottom: 10/16 + rem;
+    margin-bottom: calc(10/16) rem;
   }
 }
 

@@ -6,6 +6,8 @@
     border: none;
     color: $gray;
     padding: 0;
+    align-items: center;
+    display: flex;
 
     @media screen and (min-width: $media-sm) {
       background-color: $primary;

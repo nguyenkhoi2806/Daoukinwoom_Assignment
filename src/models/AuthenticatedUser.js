@@ -3,6 +3,7 @@ import { Model } from "react-axiom";
 class AuthenticatedUser extends Model {
   static defaultState() {
     return {
+      id: "",
       name: null,
       avatar: null,
       username: "",
@@ -12,6 +13,7 @@ class AuthenticatedUser extends Model {
 
   static create = state => {
     return new AuthenticatedUser({
+      id: state.id,
       name: state.name,
       avatar: state.avatar,
       username: state.username,

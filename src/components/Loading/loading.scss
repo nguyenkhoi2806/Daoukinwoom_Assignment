@@ -20,7 +20,7 @@
 
   &__text {
     color: red;
-    font-size: 14/16 + rem;
+    font-size: calc(14 / 16) rem;
     font-style: italic;
     line-height: calc(19 / 14);
     margin-right: 19px;
