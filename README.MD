@@ -16,3 +16,31 @@ yarn test
 - Automatic code formatting using prettier
 - SASS stylesheets
 - Testing with Jest and Enzyme
+
+
+## Work flow render login
+@startuml
+start
+    :initialize authenticate user;
+    if(user is exist from localStorage) then (yes)
+        :render authenticate user menu;
+    else (no); 
+        :render login link;
+     endif;    
+end
+@enduml
+
+
+## Work flow login authenticate for user
+@startuml
+start
+    :user click login; 
+    :load user from api;
+    if(status is success) then (yes)
+      :save user to storage; 
+      :render authenticate user menu; 
+    else (no)
+       :throw error; 
+    endif;
+end
+@enduml

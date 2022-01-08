@@ -18,7 +18,7 @@ const AuthenticateMenuWithLoading = withLoading(AuthenticateMenu);
 const AuthenticateMenuContainer = () => {
   const [isShowUserInfoModal, setShowUserInfoModal] = useState(false);
   const [authenticateUser, setAuthenticateUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSigningIn, setIsSigningIn] = useState(false);
 
   const handleShowUserInfoModal = () => {
     setShowUserInfoModal(!isShowUserInfoModal);
@@ -37,7 +37,7 @@ const AuthenticateMenuContainer = () => {
 
   const loadUserFromApi = () => {
     return new Promise((resolve, reject) => {
-      setIsLoading(true);
+      setIsSigningIn(true);
       AuthApi.login()
         .then(response => {
           const { data } = response;
@@ -51,14 +51,14 @@ const AuthenticateMenuContainer = () => {
           reject(error);
         })
         .finally(() => {
-          setIsLoading(false);
+          setIsSigningIn(false);
         });
     });
   };
 
   const logOut = () => {
     return new Promise((resolve, reject) => {
-      setIsLoading(true);
+      setIsSigningIn(true);
       clearUserData()
         .then(() => {
           setAuthenticateUser(null);
@@ -68,7 +68,7 @@ const AuthenticateMenuContainer = () => {
           reject(error);
         })
         .finally(() => {
-          setIsLoading(false);
+          setIsSigningIn(false);
         });
     });
   };
@@ -76,7 +76,7 @@ const AuthenticateMenuContainer = () => {
   return (
     <>
       <AuthenticateMenuWithLoading
-        isLoading={isLoading}
+        isLoading={isSigningIn}
         handleShowUserInfoModal={handleShowUserInfoModal}
         authenticateUser={authenticateUser}
         logOut={logOut}
