@@ -10,5 +10,10 @@
 
   h1 {
     font-weight: bold;
+    font-size: 2rem;
+
+    @media screen and (min-width: $media-sm) {
+      font-size: 3rem;
+    }
   }
 }
