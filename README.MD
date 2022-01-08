@@ -35,7 +35,7 @@ start
     :initialize authenticate user;
     if(user is exist from localStorage) then (yes)
         :render authenticate user menu;
-    else (no);
+    else (no)
         :render login link;
      endif;
 end
