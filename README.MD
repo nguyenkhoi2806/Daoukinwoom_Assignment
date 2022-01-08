@@ -17,6 +17,8 @@ yarn test
 - SASS stylesheets
 - Testing with Jest and Enzyme
 
+## Note
+If you inspect browser to detect on mobile please press F5 to make sure render on mobile run properly  
 
 ## Work flow render login
 @startuml
