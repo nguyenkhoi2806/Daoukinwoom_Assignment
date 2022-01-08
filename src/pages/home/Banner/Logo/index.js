@@ -8,12 +8,14 @@ import LogoImage from "../../../../assets/images/logo.png";
 const Logo = () => (
   <>
     <div className="logo">
-      <div className="logo__image">
-        <img src={LogoImage} />
-      </div>
-      <div className="logo__home-menu">
-        <img src={Curve} />
-        <span>Home</span>
+      <div className="logo__top">
+        <div className="logo__image">
+          <img src={LogoImage} />
+        </div>
+        <div className="logo__home-menu">
+          <img src={Curve} />
+          <span>Home</span>
+        </div>
       </div>
     </div>
     <div className="logo__company">

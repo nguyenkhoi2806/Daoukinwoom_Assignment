@@ -22,6 +22,15 @@
   align-items: baseline;
   font-family: 'Roboto';
   
+  @media screen and (min-width: $media-lg) {
+    margin-bottom: 0;
+    padding-left: 10px;
+  }
+
+  @media screen and (min-width: $media-xl) { 
+    padding-left: 40px;
+  }
+
   &--active {
     border: 2px solid #e6367e;
   }
