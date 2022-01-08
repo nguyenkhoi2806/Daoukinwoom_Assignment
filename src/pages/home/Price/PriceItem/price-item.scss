@@ -29,9 +29,14 @@
   &--verified {
     background: #e6367e;
     color: white;
+    
     .price-item {
       &__name {
         color: white;
+        
+        &-detail {
+          color: white;
+        }
       }
     }
   }
@@ -56,6 +61,7 @@
   &__money {
     display: flex;
     align-items: center;
+    font-family: 'Noto Sans';
 
     &-number {
       font-size: 2.25rem;
@@ -70,6 +76,7 @@
     &-currency {
       display: grid;
       font-family: 'Roboto';
+      font-weight: bold;
 
       &-month {
         font-size: 0.75rem;

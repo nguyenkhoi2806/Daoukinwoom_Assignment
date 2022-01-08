@@ -15,6 +15,12 @@
 .menu-mobile {
   width: 70%;
 
+  .offcanvas {
+    &-header {
+      padding: 1rem 1.5rem 0 1rem;
+    }
+  }
+
   .menu-service {
     padding: 0;
 

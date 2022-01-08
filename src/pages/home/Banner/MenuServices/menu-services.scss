@@ -7,9 +7,10 @@
   padding-top: 1rem;
   padding-right: 1rem;
   justify-content: center;
+  font-size: 14px;
 
   @media screen and (min-width: $media-sm) {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
     display: flex;
   }
 

@@ -11,7 +11,7 @@
 
   &-email,
   &-address {
-    font-family: 'DMSans';
+    font-family: "DMSans";
   }
 
   &-email {
@@ -21,8 +21,16 @@
   &-address {
     font-size: 15px;
   }
+  
+  .indonesia-office,
+  .korea-office {
+    li {
+      font-size: 15px;
+    }
+  }
 
   @media screen and (min-width: $media-sm) {
     padding: 0;
   }
 }
+

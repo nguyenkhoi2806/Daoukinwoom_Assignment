@@ -12,7 +12,11 @@ const PriceItem = props => {
   const { name, description, money, classWrapper, currency } = props;
   return (
     <Col sm={6} md={6} lg={3} className="price">
-      <div className={`price-item price-item--${classWrapper}`}>
+      <div
+        className={
+          "price-item " + (classWrapper && `price-item--${classWrapper}`)
+        }
+      >
         <span className="price-item__name">
           <strong>{name}</strong>
           <span className="price-item__name-detail">{description}</span>

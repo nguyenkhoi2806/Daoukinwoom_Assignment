@@ -5,9 +5,9 @@ import React from "react";
 import { Col } from "react-bootstrap";
 
 const FooterItem = props => {
-  const { name, content } = props;
+  const { name, content, classNameWrapper } = props;
   return (
-    <Col sm={6} md={4} lg={4} className="footer-item">
+    <Col sm={6} md={4} lg={4} className={`footer-item ${classNameWrapper}`}>
       <div className="footer-item__content">
         <span className="footer-item__content-name">{name}</span>
         <div className="footer-item__content-detail">
@@ -20,12 +20,14 @@ const FooterItem = props => {
 
 FooterItem.propTypes = {
   name: PropTypes.string,
-  content: PropTypes.node
+  content: PropTypes.node,
+  classNameWrapper: PropTypes.string
 };
 
 FooterItem.defaultProps = {
   name: "",
-  content: null
+  content: null,
+  classNameWrapper: ""
 };
 
 export default FooterItem;

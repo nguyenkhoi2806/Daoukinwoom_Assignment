@@ -22,7 +22,13 @@ const AuthenticateMenu = props => {
       className="authenticate-menu"
       align="end"
       title={
-        <Image src={authenticateUser.getAvatar()} className="rounded-circle" />
+        <>
+          <Image
+            src={authenticateUser.getAvatar()}
+            className="rounded-circle"
+          />
+          <span>{authenticateUser.getUsername()}</span>
+        </>
       }
     >
       <Dropdown.Item

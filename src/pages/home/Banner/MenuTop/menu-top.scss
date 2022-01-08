@@ -8,10 +8,9 @@
   justify-content: right;
   display: flex;
   align-items: center;
-
-  @media screen and (min-width: $media-lg) {
-    padding-right: 65px;
-  }
+  color: $secondaryColor;
+  font-size: 14px;
+  padding-right: 8%; 
 
   .form-group {
     margin-bottom: 0;
@@ -20,10 +19,8 @@
   &__menu {
     display: content;
     width: max-content;
-
-    @media screen and (min-width: $media-lg) {
-      margin-left: 80px;
-    }
+    font-family: "Roboto";
+    margin-left: 80px;
   }
 
   .form-select {
@@ -33,5 +30,7 @@
     background-image: url("../../../../assets/images/arrown-down.png");
     background-repeat: no-repeat;
     background-position: right 1.25rem center;
+    font-size: 14px;
+    color: $secondaryColor; 
   }
 }

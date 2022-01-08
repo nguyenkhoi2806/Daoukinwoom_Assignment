@@ -29,6 +29,7 @@ const Footer = () => {
           />
           <FooterItem
             name="Indonesia Office"
+            classNameWrapper="indonesia-office"
             content={
               <>
                 <li>
@@ -41,6 +42,7 @@ const Footer = () => {
           />
           <FooterItem
             name="Korea Office"
+            classNameWrapper="korea-office"
             content={
               <>
                 <li className="footer-address">
