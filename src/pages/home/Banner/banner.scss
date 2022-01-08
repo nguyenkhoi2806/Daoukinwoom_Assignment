@@ -4,6 +4,11 @@
   width: 100%;
 
   @media screen and (min-width: $media-lg) {
+    height: 50vh;
+    display: flex;
+  }
+
+  @media screen and (min-width: $media-xl) {
     height: 80vh;
     display: flex;
   }
