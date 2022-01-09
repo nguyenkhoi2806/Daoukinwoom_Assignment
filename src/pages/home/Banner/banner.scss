@@ -38,6 +38,7 @@
 
       @media screen and (min-width: $media-lg) { 
         padding-top: 24px; 
+        background-position: bottom calc(50/16)+rem right;
       }
     }
   }
