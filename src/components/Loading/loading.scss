@@ -18,14 +18,6 @@
   align-items: center;
   justify-content: flex-end;
 
-  &__text {
-    color: red;
-    font-size: calc(14 / 16) + rem;
-    font-style: italic;
-    line-height: calc(19 / 14);
-    margin-right: 19px;
-  }
-
   &__spinner {
     width: 38px;
     height: 38px;
