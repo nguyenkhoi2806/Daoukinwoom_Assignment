@@ -4,7 +4,7 @@
   width: 100%;
 
   @media screen and (min-width: $media-lg) {
-    height: 50vh;
+    height: 70vh;
     display: flex;
   }
 
@@ -37,13 +37,12 @@
     &-service {
       background-image: url("../../../assets//images/banner-header.png");
       background-repeat: no-repeat;
-      background-position: bottom;
+      background-position: bottom right;
       background-size: cover;
       height: 100%;
 
       @media screen and (min-width: $media-lg) { 
-        padding-top: 24px;
-        background-position: bottom;
+        padding-top: 24px; 
       }
     }
   }
