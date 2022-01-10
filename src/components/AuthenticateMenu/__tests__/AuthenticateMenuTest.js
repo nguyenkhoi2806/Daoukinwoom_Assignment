@@ -5,8 +5,8 @@ import AuthenticateUser from "../../../models/AuthenticatedUser";
 import { findByTestAttribute } from "../../../test/testUtils";
 import AuthenticateMenu from "../";
 
-const getComponent = authenticateUser => {
-  return shallow(<AuthenticateMenu authenticateUser={authenticateUser} />);
+const getComponent = authenticatedUser => {
+  return shallow(<AuthenticateMenu authenticatedUser={authenticatedUser} />);
 };
 
 const testRenderInfoUser = [
@@ -14,14 +14,14 @@ const testRenderInfoUser = [
     {
       description:
         "Will not render authenticate user menu if user is not authenticated",
-      authenticateUser: null
+      authenticatedUser: new AuthenticateUser()
     }
   ],
   [
     {
       description:
         "Will render authenticate user menu if user is authenticated",
-      authenticateUser: AuthenticateUser.create({
+      authenticatedUser: AuthenticateUser.create({
         avatar: "https://cdn.fakercloud.com/avatars/sergeysafonov_128.jpg",
         createdAt: "2021-10-21T08:36:53.248Z",
         id: "",
@@ -34,11 +34,11 @@ const testRenderInfoUser = [
 
 describe.each(testRenderInfoUser)(
   "Test render authenticate user menu",
-  ({ description, authenticateUser }) => {
+  ({ description, authenticatedUser }) => {
     let authenticateMenuComponent;
 
     beforeEach(() => {
-      authenticateMenuComponent = getComponent(authenticateUser);
+      authenticateMenuComponent = getComponent(authenticatedUser);
     });
 
     test(description, () => {
@@ -47,11 +47,11 @@ describe.each(testRenderInfoUser)(
           authenticateMenuComponent,
           "authenticate-menu"
         ).exists()
-      ).toBe(authenticateUser !== null);
+      ).toBe(authenticatedUser.isAuthenticated());
 
       expect(
         findByTestAttribute(authenticateMenuComponent, "login").exists()
-      ).toBe(authenticateUser === null);
+      ).toBe(!authenticatedUser.isAuthenticated());
     });
   }
 );

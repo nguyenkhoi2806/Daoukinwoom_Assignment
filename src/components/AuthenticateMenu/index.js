@@ -6,11 +6,16 @@ import AuthenticatedUser from "../../models/AuthenticatedUser";
 import Image from "../Image";
 
 const AuthenticateMenu = props => {
-  const { handleShowUserInfoModal, authenticateUser, logOut, login } = props;
+  const {
+    handleShowUserInfoModal,
+    authenticatedUser,
+    logOut,
+    handleShowLoginModal
+  } = props;
 
-  if (!authenticateUser) {
+  if (!authenticatedUser.isAuthenticated()) {
     return (
-      <a data-test="login" onClick={login}>
+      <a data-test="login" onClick={handleShowLoginModal}>
         Login
       </a>
     );
@@ -24,10 +29,10 @@ const AuthenticateMenu = props => {
       title={
         <>
           <Image
-            src={authenticateUser.getAvatar()}
+            src={authenticatedUser.getAvatar()}
             className="rounded-circle"
           />
-          <span>{authenticateUser.getUsername()}</span>
+          <span>{authenticatedUser.getUsername()}</span>
         </>
       }
     >
@@ -46,16 +51,17 @@ const AuthenticateMenu = props => {
 
 AuthenticateMenu.propTypes = {
   handleShowUserInfoModal: PropTypes.func,
-  authenticateUser: PropTypes.instanceOf(AuthenticatedUser),
+  authenticatedUser: PropTypes.instanceOf(AuthenticatedUser),
   logOut: PropTypes.func,
-  login: PropTypes.func
+  handleShowLoginModal: PropTypes.func
 };
 
 AuthenticateMenu.defaultProps = {
   handleShowUserInfoModal: () => null,
-  authenticateUser: null,
+  authenticatedUser: null,
   logOut: () => null,
-  login: () => null
+  login: () => null,
+  handleShowLoginModal: () => null
 };
 
 export default AuthenticateMenu;

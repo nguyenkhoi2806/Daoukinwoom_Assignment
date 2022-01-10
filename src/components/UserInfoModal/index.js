@@ -7,7 +7,7 @@ import AuthenticatedUser from "../../models/AuthenticatedUser";
 import Info from "./Info";
 
 const UserInfoModal = props => {
-  const { onHide, authenticateUser } = props;
+  const { onHide, authenticatedUser } = props;
 
   return (
     <Modal size="lg" show={true} onHide={onHide}>
@@ -15,16 +15,16 @@ const UserInfoModal = props => {
         <Modal.Title>User information</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Info label="Name" value={authenticateUser.getName()} />
-        <Info label="Username" value={authenticateUser.getUsername()} />
+        <Info label="Name" value={authenticatedUser.getName()} />
+        <Info label="Username" value={authenticatedUser.getUsername()} />
         <Info
           label="Avatar"
           type="image"
-          value={authenticateUser.getAvatar()}
+          value={authenticatedUser.getAvatar()}
         />
         <Info
           label="Created at"
-          value={moment(authenticateUser.getCreatedAt()).format("MM/DD/YYYY")}
+          value={moment(authenticatedUser.getCreatedAt()).format("MM/DD/YYYY")}
         />
       </Modal.Body>
     </Modal>
@@ -33,7 +33,7 @@ const UserInfoModal = props => {
 
 UserInfoModal.propTypes = {
   onHide: PropTypes.func,
-  authenticateUser: PropTypes.instanceOf(AuthenticatedUser)
+  authenticatedUser: PropTypes.instanceOf(AuthenticatedUser)
 };
 
 UserInfoModal.defaultProps = {

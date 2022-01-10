@@ -1,96 +1,69 @@
 import "./authenticate-menu.scss";
 
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
-import AuthApi from "../../api/AuthApi";
-import withLoading from "../../hoc/withLoading";
 import {
-  clearUserData,
-  loadUserFromStorage,
-  saveUserToStorage
-} from "../../localStorage";
-import AuthenticatedUser from "../../models/AuthenticatedUser";
+  initializeAuthenticateUser,
+  logout
+} from "../../actions/auth/authenticatedActions";
+import withLoading from "../../hoc/withLoading";
+import LoginModalContainer from "../LoginModal/LoginModalContainer";
 import UserInfoModal from "../UserInfoModal";
 import AuthenticateMenu from ".";
 
 const AuthenticateMenuWithLoading = withLoading(AuthenticateMenu);
 
-const AuthenticateMenuContainer = () => {
+const AuthenticateMenuContainer = props => {
+  const { dispatch, authenticatedUser } = props;
   const [isShowUserInfoModal, setShowUserInfoModal] = useState(false);
-  const [authenticateUser, setAuthenticateUser] = useState(null);
-  const [isSigningIn, setIsSigningIn] = useState(false);
+  const [isShowLoginModal, setIsShowLoginModal] = useState(false);
 
   const handleShowUserInfoModal = () => {
     setShowUserInfoModal(!isShowUserInfoModal);
   };
 
+  const handleShowLoginModal = () => {
+    setIsShowLoginModal(!isShowLoginModal);
+  };
+
   useEffect(() => {
-    initializeAuthenticateUser();
+    dispatch(initializeAuthenticateUser());
   }, []);
 
-  const initializeAuthenticateUser = () => {
-    const userFromLocalStorage = loadUserFromStorage();
-    if (userFromLocalStorage) {
-      setAuthenticateUser(userFromLocalStorage);
-    }
-  };
-
-  const loadUserFromApi = () => {
-    return new Promise((resolve, reject) => {
-      setIsSigningIn(true);
-      AuthApi.login()
-        .then(response => {
-          const { data } = response;
-          if (response.status === 200 && data) {
-            setAuthenticateUser(AuthenticatedUser.create(data));
-            saveUserToStorage({ data });
-          }
-          resolve(data);
-        })
-        .catch(error => {
-          reject(error);
-        })
-        .finally(() => {
-          setIsSigningIn(false);
-        });
-    });
-  };
-
-  const logOut = () => {
-    return new Promise((resolve, reject) => {
-      setIsSigningIn(true);
-      clearUserData()
-        .then(() => {
-          setAuthenticateUser(null);
-          resolve();
-        })
-        .catch(error => {
-          reject(error);
-        })
-        .finally(() => {
-          setIsSigningIn(false);
-        });
-    });
+  const handleLogOut = () => {
+    dispatch(logout());
   };
 
   return (
     <>
       <AuthenticateMenuWithLoading
-        isLoading={isSigningIn}
         handleShowUserInfoModal={handleShowUserInfoModal}
-        authenticateUser={authenticateUser}
-        logOut={logOut}
-        login={loadUserFromApi}
+        authenticatedUser={authenticatedUser}
+        logOut={handleLogOut}
+        handleShowLoginModal={handleShowLoginModal}
       />
       {isShowUserInfoModal
-        && authenticateUser && (
+        && authenticatedUser && (
           <UserInfoModal
             onHide={handleShowUserInfoModal}
-            authenticateUser={authenticateUser}
+            authenticatedUser={authenticatedUser}
           />
         )}
+
+      {isShowLoginModal && (
+        <LoginModalContainer handleClose={handleShowLoginModal} />
+      )}
     </>
   );
 };
 
-export default AuthenticateMenuContainer;
+const mapStateToProps = state => {
+  const { authenticatedUser } = state.authenticate;
+
+  return {
+    authenticatedUser
+  };
+};
+
+export default connect(mapStateToProps)(AuthenticateMenuContainer);
