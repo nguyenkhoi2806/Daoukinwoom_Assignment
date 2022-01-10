@@ -1,7 +1,7 @@
 @import "./common/fonts";
 @import "./common/variable";
 
-@import "~bootstrap/scss/bootstrap"; 
+@import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
@@ -21,7 +21,7 @@ ul {
   list-style: none;
 
   li {
-    margin-bottom: calc(10/16) + rem;
+    margin-bottom: calc(10 / 16) + rem;
   }
 }
 
@@ -32,3 +32,9 @@ ul {
 a {
   cursor: pointer;
 }
+
+.btn:disabled {
+  &:disabled {
+    cursor: not-allowed;
+  }
+} 
