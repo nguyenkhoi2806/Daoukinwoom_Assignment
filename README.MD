@@ -52,6 +52,7 @@ start
     if(user enter user name and password) then(yes)
         :click button sign in
             if(status is success) then (yes)
+                :close modal login;
                 :save user to storage;
                 :render authenticate user menu;
             else (no)
