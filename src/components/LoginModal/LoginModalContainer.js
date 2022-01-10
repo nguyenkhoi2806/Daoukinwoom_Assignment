@@ -6,10 +6,15 @@ import LoginModal from "./";
 
 const LoginModalContainer = props => {
   const { handleClose, dispatch, isSigning } = props;
-  const [inputLogin, setInputs] = useState({});
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleChangeInput = (name, value) => {
-    setInputs(state => ({ ...state, [name]: value }));
+    if (name === "username") {
+      setUserName(value);
+    } else {
+      setPassword(value);
+    }
   };
 
   const handleSignIn = () => {
@@ -22,13 +27,19 @@ const LoginModalContainer = props => {
       });
   };
 
+  const canSignIn = () => {
+    return username !== "" && password !== "";
+  };
+
   return (
     <LoginModal
       handleSignIn={handleSignIn}
       handleClose={handleClose}
       handleChangeInput={handleChangeInput}
-      inputLogin={inputLogin}
+      password={password}
+      username={username}
       isSigning={isSigning}
+      canSignIn={canSignIn()}
     />
   );
 };

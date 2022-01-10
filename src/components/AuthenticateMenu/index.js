@@ -13,7 +13,7 @@ const AuthenticateMenu = props => {
     handleShowLoginModal
   } = props;
 
-  if (!authenticatedUser.getId()) {
+  if (!authenticatedUser.isAuthenticated()) {
     return (
       <a data-test="login" onClick={handleShowLoginModal}>
         Login

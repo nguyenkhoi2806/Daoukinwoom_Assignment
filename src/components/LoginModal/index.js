@@ -12,9 +12,11 @@ const LoginModal = props => {
   const {
     handleClose,
     handleChangeInput,
-    inputLogin,
+    username,
+    password,
     handleSignIn,
-    isSigning
+    isSigning,
+    canSignIn
   } = props;
 
   return (
@@ -26,20 +28,21 @@ const LoginModal = props => {
         <Input
           type={TEXT}
           label="User name"
-          value={inputLogin.username}
-          onChange={handleChangeInput}
+          value={username}
+          onChange={event => handleChangeInput("username", event.target.value)}
         />
         <Input
           type={PASSWORD}
           label="Password"
-          value={inputLogin.password}
-          onChange={handleChangeInput}
+          value={password}
+          onChange={event => handleChangeInput("password", event.target.value)}
         />
       </Modal.Body>
       <Modal.Footer>
         <ButtonWithLoading
           isLoading={isSigning}
           variant="primary"
+          disabled={!canSignIn}
           onClick={handleSignIn}
         >
           Sign in
@@ -56,16 +59,20 @@ LoginModal.propTypes = {
   handleClose: PropTypes.func,
   handleSignIn: PropTypes.func,
   handleChangeInput: PropTypes.func,
-  inputLogin: PropTypes.object,
-  isSigning: PropTypes.bool
+  username: PropTypes.string,
+  password: PropTypes.string,
+  isSigning: PropTypes.bool,
+  canSignIn: PropTypes.bool
 };
 
 LoginModal.defaultProps = {
   handleShowUserInfoModal: () => null,
   handleSignIn: () => null,
   handleChangeInput: () => null,
-  inputLogin: { username: "", password: "" },
-  isSigning: false
+  username: "",
+  password: "",
+  isSigning: false,
+  canSignIn: false
 };
 
 export default LoginModal;

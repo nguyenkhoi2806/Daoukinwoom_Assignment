@@ -20,6 +20,10 @@ class AuthenticatedUser extends Model {
       createdAt: state.createdAt
     });
   };
+
+  isAuthenticated = () => {
+    return this.getId() !== "";
+  };
 }
 
 export default AuthenticatedUser;

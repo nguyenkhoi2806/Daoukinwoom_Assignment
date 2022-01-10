@@ -48,12 +48,15 @@ end
 @startuml
 start
     :user click login;
-    :load user from api;
-    if(status is success) then (yes)
-      :save user to storage;
-      :render authenticate user menu;
-    else (no)
-       :throw error;
+    :open modal login;
+    if(user enter user name and password) then(yes)
+        :click button sign in
+            if(status is success) then (yes)
+                :save user to storage;
+                :render authenticate user menu;
+            else (no)
+                :throw error;
+        endif;
     endif;
 end
 @enduml
